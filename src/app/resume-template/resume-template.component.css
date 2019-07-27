@@ -1,0 +1,33 @@
+.containers{
+    margin-left: 2%;
+    position: relative;
+    width: 95%;
+    height: 100%;
+}
+h1{
+    color: rgb(160, 85, 160);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: bolder;
+    box-shadow: 3px 6px 3px rgba(174, 223, 240, 0.8);
+    background-image: linear-gradient(rgba(176, 221, 240, 0.521), rgb(214, 225, 230));
+}
+
+h2{
+    font-family:'Times New Roman', Times, serif;
+    font-size: x-large;
+    font-style: normal;
+    font-weight: bold;
+    color: brown;
+}
+b{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(26, 26, 51);
+}
+.btn-color{
+    background-color: rgb(129, 221, 224);
+}

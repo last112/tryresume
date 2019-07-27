@@ -1,0 +1,137 @@
+<div class="container-move">
+    <div class="row">
+        <app-navbar></app-navbar>
+    </div><br><br><br><br>
+        <div class="row">
+                <div class="col-md-12"><br><br>
+                  <h1>&nbsp;&nbsp;Enter Your Details to generate Resume</h1><br>
+                  <marquee><p>&nbsp;&nbsp;<strong>NOTE : </strong>Please fill the below details, After filling all the details click on "submit" button to generat your resume.</p></marquee> <br><br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <mat-horizontal-stepper labelPosition="bottom" #stepper>
+                    <mat-step [stepControl]="firstFormGroup">
+                        <form [formGroup]="firstFormGroup">
+                            <ng-template matStepLabel>Personal Details</ng-template>
+                            <mat-form-field>
+                                <input matInput placeholder="First name" formControlName="firstCtrl" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                               <input matInput placeholder="Last name" formControlName="firstCtrlOne" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                               <input matInput placeholder="Email address" formControlName="firstCtrlTwo" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                              <input matInput placeholder="Phone Number" formControlName="firstCtrlThree" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                              <input matInput placeholder="Address" formControlName="firstCtrlFour" required>
+                          </mat-form-field>
+                          <br>
+                            <div>
+                                <button class="btn btn-lg btn-success" mat-button matStepperNext>Next</button>
+                            </div>
+                        </form>
+                    </mat-step>
+                    <mat-step [stepControl]="secondFormGroup">
+                        <form [formGroup]="secondFormGroup">
+                            <ng-template matStepLabel>Career Objective</ng-template>
+                            <mat-form-field>
+                                <input matInput placeholder="Career Objective" formControlName="secondCtrl" required>
+                            </mat-form-field>
+                            <br>
+                            <div>
+                                <button class="btn btn-lg btn-danger" mat-button matStepperPrevious>Back</button>&nbsp;&nbsp;
+                                <button class="btn btn-lg btn-success" mat-button matStepperNext>Next</button>
+                            </div>
+                        </form>
+                    </mat-step>
+                    <mat-step [stepControl]="thirdFormGroup">
+                        <form [formGroup]="thirdFormGroup">
+                            <ng-template matStepLabel>Educational Details</ng-template>
+                            <mat-form-field>
+                                <input matInput placeholder="College name" formControlName="thirdCtrl" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                              <input matInput placeholder="Stream" formControlName="thirdCtrlOne" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                              <input matInput placeholder="Percentage" formControlName="thirdCtrlTwo" required>
+                            </mat-form-field>
+                            <br>
+                            <div>
+                                <button class="btn btn-lg btn-danger" mat-button matStepperPrevious>Back</button>&nbsp;&nbsp;
+                                <button class="btn btn-lg btn-success" mat-button matStepperNext>Next</button>
+                            </div>
+                        </form>
+                    </mat-step>
+                    <mat-step [stepControl]="fourthFormGroup">
+                        <form [formGroup]="fourthFormGroup">
+                            <ng-template matStepLabel>Technical Skills</ng-template>
+                            <mat-form-field>
+                                <input matInput placeholder="Programming Languages" formControlName="fourthCtrl" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                              <input matInput placeholder="Web Technologies" formControlName="fourthCtrlOne" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                              <input matInput placeholder="Testing and Developing skills" formControlName="fourthCtrlTwo" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                                <input matInput placeholder="Other skills" formControlName="fourthCtrlThree" required>
+                              </mat-form-field>
+                              <br>
+                            <div>
+                                <button class="btn btn-lg btn-danger" mat-button matStepperPrevious>Back</button>&nbsp;&nbsp;
+                                <button class="btn btn-lg btn-success" mat-button matStepperNext>Next</button>
+                            </div>
+                        </form>
+                    </mat-step>
+                    <mat-step [stepControl]="fifthFormGroup">
+                        <form [formGroup]="fifthFormGroup">
+                            <ng-template matStepLabel>Project Details</ng-template>
+                            <mat-form-field>
+                                <input matInput placeholder="Project title" formControlName="fifthCtrl" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                              <input matInput placeholder="Duration" formControlName="fifthCtrlOne" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                              <input matInput placeholder="Technologies Used" formControlName="fifthCtrlTwo" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                                <input matInput placeholder="Description" formControlName="fifthCtrlThree" required>
+                              </mat-form-field>
+                              <br>
+                            <div>
+                                <button class="btn btn-lg btn-danger" mat-button matStepperPrevious>Back</button>&nbsp;&nbsp;
+                                <button class="btn btn-lg btn-success" mat-button matStepperNext>Next</button>
+                            </div>
+                        </form>
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel>Confirmation</ng-template>
+                         <h4 class="palign">Please Make sure that you entered correct data...</h4><hr>
+                        <div class="palign">
+                            <button class="btn btn-lg btn-danger" mat-button matStepperPrevious>Back</button>&nbsp;&nbsp;
+                            <button class="btn btn-lg btn-success" mat-button (click)="stepper.reset()">Submit</button>
+                        </div>
+                    </mat-step>
+                  </mat-horizontal-stepper>    
+                </div>
+              </div>
+</div>
