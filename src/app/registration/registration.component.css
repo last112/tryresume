@@ -1,0 +1,28 @@
+h2 {
+    border-bottom: 4px solid rgb(116, 163, 224);
+    background-color: white;
+    width: 20%;
+}
+.star
+{
+    color: brown;
+}
+
+.wll{
+    background-color: rgb(201, 172, 135);
+}
+h1{
+    color: rgb(160, 85, 160);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: bolder;
+    box-shadow: 3px 6px 3px rgba(174, 223, 240, 0.8);
+    background-image: linear-gradient(rgba(176, 221, 240, 0.521), rgb(214, 225, 230));
+}
+.containers{
+    margin-left: 2%;
+    position: relative;
+    width: 95%;
+    height: 100%;
+}

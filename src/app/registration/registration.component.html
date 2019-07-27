@@ -1,0 +1,121 @@
+<div class="containers">
+    <div class="row">
+        <app-navbar></app-navbar>
+       </div><br><br><br><br><br><br>
+    <div class="row">
+      <h1>&nbsp;&nbsp;User SignUp Form</h1><br>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-11">
+        <h3>Registered already? Click here to <a style="text-decoration:none" routerLink='/login'><b>Login</b></a></h3>
+      </div>
+    </div>
+    <form  [formGroup]="registerForm" (ngSubmit)="onsubmit()">
+      <div class="row">
+        <h2>Personal Details</h2>
+      </div><br>
+      <div class="row">
+        <div class="form-group col-md-3" [ngClass]="{'has-error': registerForm.get('fname').touched && registerForm.get('fname').invalid}">
+        <label for="fname" class="control-label">First Name<span class="star">*</span></label>
+        <input type="text" class="form-control" id="fname" placeholder="Your FirstName" required formControlName="fname">
+        <span *ngIf="registerForm.get('fname').touched && registerForm.get('fname').hasError('required')" class="help-block">
+          First Name can't be blank.
+        </span>
+        </div>
+        <div class="form-group col-md-3" [ngClass]="{'has-error': registerForm.get('lname').touched && registerForm.get('lname').invalid}">
+          <label for="lname" class="control-label">Last Name<span class="star">*</span></label>
+          <input type="text" class="form-control" id="lname" placeholder="Your Last Name" required formControlName="lname">
+          <span *ngIf="registerForm.get('lname').touched && registerForm.get('lname').hasError('required')" class="help-block">
+           Last Name can't be blank.
+          </span>
+          </div>
+        <div class="form-group col-md-3">
+        <label class="control-label">Gender<span class="star">*</span></label>
+        <div class="radio">
+            <label><input type="radio" id="male" name="gender" value="m" checked>Male</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" id="female" name="gender" value="f">Female</label>
+        </div>
+        </div>
+        <div class="form-group col-md-3" [ngClass]="{'has-error': registerForm.get('date').touched && registerForm.get('date').invalid}">
+        <label for="date" class="control-label">Date of Birth<span class="star">*</span></label>
+        <input type="date" class="form-control" id="date" placeholder="dd-mm-yyyy" formControlName="date" required>
+        <span *ngIf="registerForm.get('date').touched && registerForm.get('date').hasError('required')" class="help-block">
+          You have not selected your Date of Birth,  Please Select it.
+        </span>
+        </div>
+      </div>
+      <div class="row">
+          <div class="form-group col-md-3" [ngClass]="{'has-error': registerForm.get('registerpassword').touched && registerForm.get('registerpassword').invalid}">
+              <label for="registerpassword" class="control-label">Password<span class="star">*</span></label>
+              <input type="password" class="form-control" id="registerpassword" formControlName="registerpassword" placeholder="Password" required>
+              <span *ngIf="registerForm.get('registerpassword').touched && registerForm.get('registerpassword').hasError('required')" class="help-block">
+                  Password can't be blank.
+                </span>
+                <span *ngIf="registerForm.get('registerpassword').touched && registerForm.get('registerpassword').hasError('symbol')" class="help-block">
+                  Password should contain atleast one special symbol.
+                </span>
+            </div>
+            <div class="form-group col-md-3" [ngClass]="{'has-error': registerForm.get('confirmPassword').touched && registerForm.get('confirmPassword').invalid}">
+                <label for="repass" class="control-label">Re-type Password<span class="star">*</span></label>
+                <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" placeholder="Re-Type Password" required>
+                <span *ngIf="registerForm.get('confirmPassword').touched && registerForm.get('confirmPassword').invalid" class="help-block">
+                    Password should match.
+                  </span>
+              </div>
+              <div class="col-md-6"></div>
+      </div>
+     <br><br>
+     <div class="row">
+        <h2>Contact Details</h2>
+      </div><br>
+     <div class="row">
+        <div class="form-group col-md-6" [ngClass]="{'has-error': registerForm.get('email').touched && registerForm.get('email').invalid}">
+            <label for="email" class="control-label">Email address<span class="star">*</span></label>
+            <input type="email" class="form-control" #input1 id="email" formControlName="email" placeholder="Your Email" required (keyup)='getdata1(input1.value)'>
+            <span *ngIf="registerForm.get('email').touched && registerForm.get('email').hasError('required')" class="help-block">
+               Email field can't be empty.
+              </span>
+              <span *ngIf="registerForm.get('email').touched && registerForm.get('email').hasError('email')" class="help-block">
+                  Please enter valid Email ID since it is used for further communication.
+                </span>
+          </div>
+          <div class="form-group col-md-6" [ngClass]="{'has-error': registerForm.get('phone').touched && registerForm.get('phone').invalid}">
+              <label for="phone" class="control-label">Phone Number<span class="star">*</span></label>
+              <input type="number" class="form-control" #input2 id="phone" formControlName="phone" placeholder="Your Phone Number" required (keyup)='getdata2(input2.value)'>
+              <span *ngIf="registerForm.get('phone').touched && registerForm.get('phone').hasError('required')" class="help-block">
+                  Phone number field can't be empty.
+                 </span>
+                 <span *ngIf="registerForm.get('phone').touched && registerForm.get('phone').hasError('digit')" class="help-block">
+                     Please enter valid Phone number and it must be 10 digits.
+                   </span>
+            </div>
+     </div>
+  
+    <div class="wll col-md-12">
+      <p><span class="star"><strong>NOTE:</strong></span>&nbsp;Please ensure you enter the correct contact details, since this will be used for further communication.</p>
+    </div>
+     <br><br><br>
+    <div class="row">
+        <h2>Declaration</h2>
+      </div><br>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" 
+           id="isActive"
+           formControlName = "isActive"
+          >I Agree to the terms and conditions (Privacy Policy).
+        </label>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="form-group">
+            <button type="submit" [disabled]="registerForm.invalid" class="btn btn-lg btn-block btn-success">Register</button>
+        </div>
+      </div>
+    </form>
+    <h4 align='right'>Registered already? Click here to <a style="text-decoration:none" routerLink='/login'><b>Login</b></a></h4><br>
+</div>
